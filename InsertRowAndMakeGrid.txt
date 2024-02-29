@@ -1,0 +1,41 @@
+Sub InsertRowAndMakeGrid()
+    ' Добавление строки с названиями
+    Rows("1:1").Insert Shift:=xlDown, CopyOrigin:=xlFormatFromLeftOrAbove
+    Range("A1:E1").Value = Array("Номер", "Наименование", "Дата регистрации", "Дата последнего события", "Пакет документов при внесении")
+    
+    ' Выделение названий жирным
+    Range("A1:E1").Font.Bold = True
+    
+    ' Очистка существующих границ в указанном диапазоне
+    Range("A1:E" & Rows.Count).Borders.LineStyle = xlNone
+
+    ' Подсчет количества строк для 1 столбца и рисование сетки
+    Dim lastRow As Long
+    lastRow = Cells(Rows.Count, 1).End(xlUp).Row
+    
+    ' Рисование сетки для столбцов A:E до последней строки в столбце A
+    With Range("A1:E" & lastRow).Borders
+        .LineStyle = xlContinuous
+    End With
+    
+    ' Установка ширины столбцов
+    Columns("A:A").ColumnWidth = 17.09
+    Columns("B:B").ColumnWidth = 26.91
+    Columns("C:C").ColumnWidth = 17.55
+    Columns("D:D").ColumnWidth = 17.91
+    Columns("E:E").ColumnWidth = 78.00
+    
+    ' Отключение отображения сообщений о макросах
+    Application.DisplayAlerts = False
+    
+    ' Конвертация в формат .xlsx и сохранение
+    Dim filePath As String
+    filePath = ThisWorkbook.Path & "\Мониторинг законопроектов.xlsx"
+    ThisWorkbook.SaveAs filePath, FileFormat:=xlOpenXMLWorkbook
+    
+    ' Включение отображения сообщений о макросах
+    Application.DisplayAlerts = True
+    
+    ' Закрытие Excel
+    Application.Quit
+End Sub

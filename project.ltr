@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-16"?>
+<LTProjectResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <WatchScripts />
+    <Ignored>
+        <KeyValueItem>
+            <Key>C:\Users\User\Documents\Primo\УралЭнергосбыт_Тестовое\Main.ltw</Key>
+            <Value>17888676-e8c7-4e10-adaa-05a6080f1729</Value>
+        </KeyValueItem>
+    </Ignored>
+    <Breakpoints />
+    <BreakpointLines />
+    <Git />
+    <LastOpenedItems>
+        <string>C:\Users\User\Documents\Primo\УралЭнергосбыт_Тестовое\Main.ltw</string>
+    </LastOpenedItems>
+</LTProjectResources>
